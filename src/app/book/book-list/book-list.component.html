@@ -1,0 +1,24 @@
+<div class="books-list-page-container page">
+    <div *ngFor="let book of booksList">
+        <div class="container">
+            <div class="card">
+                <div class="content">
+                    <div class="content-header">
+                        <span class="book-title">{{book.name}} ({{book.yearOfPublish}})</span>
+                    </div>
+                    <div class="img-container">
+                        <img src="../../assets/book.jpeg" alt="book">
+                    </div>
+                    <div class="content-info">
+                        <p class="genre">{{book.genre}}</p>
+                        <p class="price">{{book.price}}$</p>
+                        <p class="description">{{book.description}}</p>
+                    </div>
+                    <div class="view-book-link-container">
+                        <a class="link" [routerLink]="['edit', book.id]">Edit Book</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

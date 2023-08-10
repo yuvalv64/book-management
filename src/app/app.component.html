@@ -1,0 +1,19 @@
+  <mat-toolbar>
+    <button class="mat-menu-btn" mat-icon-button (click)="opened = !opened">
+      <mat-icon class="menu-icon">menu</mat-icon>
+    </button>
+    <span>LIBRARY MANAGEMENT</span>
+  </mat-toolbar>
+<mat-sidenav-container class="example-container" >
+  <mat-sidenav mode="side"  #sidenav mode="over" [(opened)]="opened"> 
+    <mat-list class="sidenav" role="list">
+      <mat-list-item role="listitem" (click)="opened = !opened" routerLink="/"><a class="menu-link" >Books List</a></mat-list-item>
+      <mat-list-item role="listitem" (click)="opened = !opened" routerLink="createBook"><a class="menu-link" >Create Book</a></mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<app-footer></app-footer>

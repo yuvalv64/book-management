@@ -1,0 +1,39 @@
+mat-toolbar{
+    background-color: #e77070;
+
+    span{
+        color: #FFFFFF;
+    }
+}
+
+
+.example-container {
+
+  background-color: #fef8bd;
+  width: 100%;
+  height: 82%;
+    mat-sidenav{
+        background-color: #e77070;
+    }
+    .sidenav{
+        width: 200px;
+        mat-list-item{
+            cursor: pointer;
+            a.menu-link{
+                color: inherit;
+                text-decoration: none;
+                color: #FFFFFF;
+            }
+            &:hover{
+                background-color: #ce6262;
+            }
+        }
+    }
+}
+
+
+.mat-menu-btn{
+    mat-icon{
+        color: #FFFFFF;
+    }
+}

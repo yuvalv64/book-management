@@ -1,0 +1,37 @@
+<div class="form-fields-container">
+     <form class="form-row" #form="ngForm" (ngSubmit)="submit($event)" [formGroup]="editBookForm">
+        <mat-form-field class="input-field">
+            <mat-label>Book Name</mat-label>
+            <input formControlName="bookName" name="bookName" matInput autocomplete="off">
+        </mat-form-field>
+        <mat-form-field class="input-field">
+            <mat-label>Year of Publication</mat-label>
+            <input formControlName="yearOfPublish" name="yearOfPublish" matInput autocomplete="off">
+        </mat-form-field>
+        <mat-form-field class="input-field">
+            <mat-label>Price</mat-label>
+            <input formControlName="price" name="price" matInput autocomplete="off">
+        </mat-form-field>
+        <mat-form-field class="input-field">
+            <mat-label>Genre</mat-label>
+            <input formControlName="genre" name="genre" matInput autocomplete="off">
+        </mat-form-field>
+        <mat-form-field class="textarea-field">
+            <mat-label>Book Description</mat-label>
+            <textarea rows="5" formControlName="description" name="description" matInput autocomplete="off"></textarea>
+        </mat-form-field>
+        <div class="forum-group buttons">
+            <button *ngIf="bookInfo" id="delete" type="submit" class="btn delete">
+                <mat-icon>delete</mat-icon>
+                Remove Book 
+            </button>
+            <button id="submit" type="submit" class="btn" >
+                <mat-icon>check_circle_outline</mat-icon>
+                <span *ngIf="bookInfo">Update Book</span> 
+                <span *ngIf="!bookInfo">Create New Book</span> 
+            </button>
+        </div>
+    </form>
+</div>
+
+
