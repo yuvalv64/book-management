@@ -7,17 +7,17 @@ import { ApiService } from 'src/app/shared/api.service';
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.scss']
 })
-export class BookListComponent implements OnInit  {
-  booksList : Array<Book> = [];
+export class BookListComponent implements OnInit {
+  booksList: Array<Book> = [];
 
-  constructor(private apiService: ApiService){}
+  constructor(private apiService: ApiService) { }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.getAllBooks();
   }
 
-  getAllBooks(): void{
-    this.apiService.getAllBooks().subscribe((data) =>{
+  getAllBooks(): void {
+    this.apiService.getAllBooks().subscribe((data) => {
       this.booksList = data;
     });
   }

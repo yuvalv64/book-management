@@ -1,11 +1,11 @@
-
-.edit-book-form-container{
-    &.page{
+.edit-book-form-container {
+    &.page {
         padding: 25px;
         display: flex;
         flex-direction: column;
     }
-    .card{
+
+    .card {
         position: relative;
         width: 100%;
         height: 100%;
@@ -13,8 +13,8 @@
         box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
         margin-bottom: 2rem;
         border-radius: 1.7rem;
-        padding: 2.8rem;
+        padding: 13px 20px 13px;
         border: none;
         backdrop-filter: blur(1.5rem);
     }
-} 
+}

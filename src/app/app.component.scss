@@ -1,30 +1,39 @@
-mat-toolbar{
+mat-toolbar {
     background-color: #e77070;
 
-    span{
+    span {
         color: #FFFFFF;
     }
 }
 
+.mat-drawer-content {
+
+    display: initial;
+}
 
 .example-container {
 
-  background-color: #fef8bd;
-  width: 100%;
-  height: 82%;
-    mat-sidenav{
+    background-color: #fef8bd;
+    width: 100%;
+    height: 82%;
+
+    mat-sidenav {
         background-color: #e77070;
     }
-    .sidenav{
+
+    .sidenav {
         width: 200px;
-        mat-list-item{
+
+        mat-list-item {
             cursor: pointer;
-            a.menu-link{
+
+            a.menu-link {
                 color: inherit;
                 text-decoration: none;
                 color: #FFFFFF;
             }
-            &:hover{
+
+            &:hover {
                 background-color: #ce6262;
             }
         }
@@ -32,8 +41,8 @@ mat-toolbar{
 }
 
 
-.mat-menu-btn{
-    mat-icon{
+.mat-menu-btn {
+    mat-icon {
         color: #FFFFFF;
     }
 }

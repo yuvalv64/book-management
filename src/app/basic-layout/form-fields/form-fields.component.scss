@@ -1,32 +1,50 @@
-.form-fields-container{
-    h2{
+.form-fields-container {
+    h2 {
         text-transform: uppercase;
         margin-bottom: 20px;
     }
-    mat-form-field.input-field{
+
+    mat-form-field.input-field {
         display: flex;
         width: 30%;
     }
-    mat-form-field.textarea-field{
+
+    mat-form-field.textarea-field {
         width: 50%;
     }
-    .buttons{
+
+    .buttons {
         display: flex;
         justify-content: flex-end;
-        button{
+
+        button {
             background-color: #04AA6D;
             border: none;
             color: white;
             padding: 8px 20px;
             text-decoration: none;
             margin: 4px 2px;
-            &.delete{
+
+            &.delete {
                 background-color: #e23857;
             }
-            mat-icon{
+
+            mat-icon {
                 float: left;
                 margin-right: 5px;
             }
         }
     }
-} 
+
+    .field-container {
+        position: relative;
+
+        .field-error {
+            color: red;
+            position: absolute;
+            bottom: 1px;
+        }
+    }
+
+
+}

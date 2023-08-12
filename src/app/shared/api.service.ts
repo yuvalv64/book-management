@@ -9,26 +9,26 @@ HttpClientModule
 })
 export class ApiService {
 
-  private BASE_URL = "http://localhost:8081"
+  private BASE_URL = "http://localhost:8080/api"
   private GET_ALL_BOOKS_URL = this.BASE_URL + '/books';
   private GET_BOOK_INFO_URL = this.BASE_URL + '/bookInfo';
   private REMOVE_BOOK_URL = this.BASE_URL + '/removeBook';
   private BOOK_ACTION = this.BASE_URL + '/performBookAction';
-  constructor(private http :HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getAllBooks(): Observable<Book[]>{
+  getAllBooks(): Observable<Book[]> {
     return this.http.get<Book[]>(this.GET_ALL_BOOKS_URL);
   }
 
-  getBookInfo(id: string): Observable<Book>{
-    return this.http.get<Book>(this.GET_BOOK_INFO_URL +`/${id}`);
+  getBookInfo(id: string): Observable<Book> {
+    return this.http.get<Book>(this.GET_BOOK_INFO_URL + `/${id}`);
   }
 
-  book(book: Book): Observable<Book>{
-    return this.http.post<Book>(this.BOOK_ACTION,book);
+  book(book: Book): Observable<Book> {
+    return this.http.post<Book>(this.BOOK_ACTION, book);
   }
 
-  removeBook(id: string): Observable<Book>{
-    return this.http.get<Book>(this.REMOVE_BOOK_URL +`/${id}`);
+  removeBook(id: number): Observable<Book> {
+    return this.http.get<Book>(this.REMOVE_BOOK_URL + `/${id}`);
   }
 }

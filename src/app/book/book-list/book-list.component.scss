@@ -1,49 +1,95 @@
-.books-list-page-container{
-    &.page{
+.books-list-page-container {
+
+    &.page {
         padding: 25px;
         display: flex;
     }
+
+    .empty-list-btn {
+        margin: auto;
+
+        .empty-bt {
+            background-color: #fff;
+            border-width: 2px;
+            box-shadow: rgba(0, 0, 0, 0.2) 15px 28px 25px -18px;
+            cursor: pointer;
+            transition: all 235ms ease-in-out;
+            border-bottom-left-radius: 15px 255px;
+            border-bottom-right-radius: 225px 15px;
+            border-top-left-radius: 255px 15px;
+            border-top-right-radius: 15px 225px;
+            width: 500px;
+            height: 400px;
+            margin-top: 30%;
+            font-size: 2rem;
+            line-height: 3rem;
+        }
+
+        .empty-bt:hover {
+            box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+            transform: translate3d(0, 2px, 0);
+        }
+
+        .empty-bt:focus {
+            box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+        }
+    }
+
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    .container{
+
+    .container {
         position: relative;
-        .card{
+
+        .card {
             position: relative;
             width: 400px;
             height: 400px;
-            background-color: rgba(255, 255, 255, 0.5);
             box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
             margin-bottom: 2rem;
-            border-radius: 1.7rem;
-            padding: 2.8rem;
-            border: none;
-            backdrop-filter: blur(1.5rem);
-            .img-container{
+            background-color: rgba(0, 0, 0, 0);
+            box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+            padding: 13px 20px 13px;
+            border: 1px solid black;
+
+            @media screen and (max-width: 500px) {
+                & {
+                    width: 100%
+                }
+            }
+
+            .img-container {
                 height: 180px;
                 overflow: hidden;
                 border-radius: 20px;
-                img{
-                    width: 100%;                  
-                }    
-            } 
-            .content-header{
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .content-header {
                 margin-bottom: 10px;
-                .book-title{
+
+                .book-title {
                     font-size: 20px;
                     font-weight: bold;
                 }
             }
-            .content-info{
+
+            .content-info {
                 margin-top: 10px;
-                .genre{
+
+                .genre {
                     float: right;
                 }
-                .price{
+
+                .price {
                     font-weight: bold;
                     font-size: 1.5rem;
                 }
-                .description{
+
+                .description {
                     overflow: hidden;
                     width: 100%;
                     display: -webkit-box;
@@ -51,9 +97,13 @@
                     -webkit-box-orient: vertical;
                 }
             }
-            .view-book-link-container{
-                float: right;
-                a.link{
+
+            .view-book-link-container {
+                position: absolute;
+                right: 15px;
+                bottom: 15px;
+
+                a.link {
                     text-transform: uppercase;
                     color: #FFFFFF;
                     text-decoration: none;

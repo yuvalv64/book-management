@@ -1,4 +1,15 @@
 <div class="books-list-page-container page">
+    <div *ngIf="booksList.length === 0" class="empty-list-btn">
+        <!-- HTML !-->
+        <button class="empty-bt" routerLink="/createBook" role="button">
+            <div class="btn-text">
+                Library is Empty!<br>
+                Click here to add a new book<br>
+                <mat-icon>library_add</mat-icon>
+            </div>
+        </button>
+
+    </div>
     <div *ngFor="let book of booksList">
         <div class="container">
             <div class="card">

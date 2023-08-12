@@ -1,17 +1,33 @@
 <div class="form-fields-container">
-     <form class="form-row" #form="ngForm" (ngSubmit)="submit($event)" [formGroup]="editBookForm">
-        <mat-form-field class="input-field">
-            <mat-label>Book Name</mat-label>
-            <input formControlName="bookName" name="bookName" matInput autocomplete="off">
-        </mat-form-field>
+    <form class="form-row" #form="ngForm" (ngSubmit)="submit($event)" [formGroup]="editBookForm">
+        <div class="field-container">
+            <mat-form-field class="input-field">
+                <mat-label>Book Name</mat-label>
+                <input formControlName="bookName" name="bookName" matInput autocomplete="off">
+            </mat-form-field>
+            <span class="field-error"
+                *ngIf="!editBookForm.get('bookName')?.valid && (editBookForm.get('bookName')?.touched || editBookForm.get('bookName')?.dirty)">
+                {{ editBookForm.get('bookName')?.hasError('required') ? 'Book Name Required' : '' }}
+            </span>
+        </div>
+
         <mat-form-field class="input-field">
             <mat-label>Year of Publication</mat-label>
             <input formControlName="yearOfPublish" name="yearOfPublish" matInput autocomplete="off">
         </mat-form-field>
-        <mat-form-field class="input-field">
-            <mat-label>Price</mat-label>
-            <input formControlName="price" name="price" matInput autocomplete="off">
-        </mat-form-field>
+        <div class="field-container">
+            <mat-form-field class="input-field">
+                <mat-label>Price</mat-label>
+                <input formControlName="price" name="price" matInput autocomplete="off">
+            </mat-form-field>
+            <span class="field-error"
+                *ngIf="!editBookForm.get('price')?.valid && (editBookForm.get('price')?.touched || editBookForm.get('price')?.dirty)">
+                {{ editBookForm.get('price')?.hasError('required')
+                ? 'Price Required'
+                : editBookForm.get('price')?.hasError('pattern') ? 'Price Not Valid': ''
+                }}
+            </span>
+        </div>
         <mat-form-field class="input-field">
             <mat-label>Genre</mat-label>
             <input formControlName="genre" name="genre" matInput autocomplete="off">
@@ -23,15 +39,13 @@
         <div class="forum-group buttons">
             <button *ngIf="bookInfo" id="delete" type="submit" class="btn delete">
                 <mat-icon>delete</mat-icon>
-                Remove Book 
+                Remove Book
             </button>
-            <button id="submit" type="submit" class="btn" >
+            <button id="submit" type="submit" class="btn">
                 <mat-icon>check_circle_outline</mat-icon>
-                <span *ngIf="bookInfo">Update Book</span> 
-                <span *ngIf="!bookInfo">Create New Book</span> 
+                <span *ngIf="bookInfo">Update Book</span>
+                <span *ngIf="!bookInfo">Create New Book</span>
             </button>
         </div>
     </form>
 </div>
-
-
