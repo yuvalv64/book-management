@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
 import { Book } from 'src/app/models/book.model';
 import { ApiService } from 'src/app/shared/api.service';
+import * as bookActions from "../../state/book.actions";
+import * as fromBooks from '../../state/book.reducer';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-book-list',
@@ -8,17 +12,23 @@ import { ApiService } from 'src/app/shared/api.service';
   styleUrls: ['./book-list.component.scss']
 })
 export class BookListComponent implements OnInit {
-  booksList: Array<Book> = [];
+  booksList$!: Observable<Book[]>;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private store: Store<fromBooks.BookState>) { }
 
   ngOnInit(): void {
-    this.getAllBooks();
+    // this.getAllBooks();
+    this.store.dispatch(new bookActions.LoadBooks());
+    this.booksList$ = this.store.pipe(select(fromBooks.getAllBooks))
+  }
+
+  getBooksLength() {
+
   }
 
   getAllBooks(): void {
-    this.apiService.getAllBooks().subscribe((data) => {
-      this.booksList = data;
-    });
+    // this.apiService.getAllBooks().subscribe((data) => {
+    // this.booksList$ = data.booksList;
+    // });
   }
 }
